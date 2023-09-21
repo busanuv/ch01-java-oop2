@@ -51,49 +51,36 @@ class 소말리아인 extends 아프리카인 {
  */
 public class MemEx02 {
 
-/*    public static void start() {
-        한국인 obj = new 한국인(); // (한국인) - 아시아인 - 지구인
+    public static void start(한국인 obj) {
         System.out.println(obj.skin);
         obj.walk();
         obj.speak();
-    }*/
+    }
 
-/*    public static void start(한국인 obj) {
-        System.out.println(obj.skin);
-        obj.walk();
-        obj.speak();
-    }*/
-
-/*    public static void start(아시아인 obj) {
+    public static void start(아시아인 obj) {
         System.out.println(obj.skin);
         obj.walk();
         obj.speak(); // 동적바인딩
-    }*/
+    }
 
     public static void start(지구인 obj) {
-        //System.out.println(obj.skin); // 안됨!!
+        //System.out.println(obj.skin); // 문제 : 지구인은 skin 변수를 들고 있지 않음.
         obj.walk();
         obj.speak(); // 동적바인딩
     }
 
     public static void main(String[] args) {
         // step1
-
-/*        한국인 obj = new 한국인(); // (한국인) - 아시아인 - 지구인
-        System.out.println(obj.skin);
-        obj.walk();
-        obj.speak();*/
+        한국인 obj = new 한국인(); // (한국인) - 아시아인 - 지구인
+        System.out.println("step1--------");
+        start(new 한국인()); // start(한국인 obj)
 
         // step2
-        /*start();*/
+        System.out.println("step2--------");
+        start(new 일본인()); // start(아시아인 obj)
 
         // step3
-        /*start(new 한국인());*/
-
-        // step4
-        /*start(new 일본인());*/
-
-        // step5
-        start(new 소말리아인());
+        System.out.println("step3--------");
+        start(new 소말리아인()); // start(지구인 obj)
     }
 }

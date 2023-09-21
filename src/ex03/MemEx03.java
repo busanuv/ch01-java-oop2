@@ -56,6 +56,16 @@ class 소말리아인 extends 아프리카인{
     }
 }
 
+// 문제점 : 중국인 추가해보기
+// speak 메서드의 강제성이 없음.
+// 팀장의 잘못일까? 신입의 잘못일까?
+class 중국인 extends 아시아인 {
+
+    public void talk() {
+        System.out.println("중국어로 말한다");
+    }
+}
+
 /**
  * 타입에 따라 변수를 찾아간다.
  * 상속을 통해 메모리 구조를 디자인할 수 있다.
@@ -71,8 +81,13 @@ public class MemEx03 {
     }
 
     public static void main(String[] args) {
+        System.out.println("step1-----");
         start(new 한국인());
+        System.out.println("step2-----");
         start(new 일본인());
+        System.out.println("step3-----");
         start(new 소말리아인());
+        System.out.println("step4-----");
+        start(new 중국인());
     }
 }
