@@ -46,8 +46,9 @@ class 소말리아인 extends 아프리카인 {
 }
 
 /**
- * 타입에 따라 변수를 찾아간다.
- * 상속을 통해 메모리 구조를 디자인할 수 있다.
+ * 동적바인딩 -> 동적으로 메서드를 찾아가는 기법
+ * 자식이 부모의 메서드를 재정의를 하면 부모의 메서드가 오버라이드(무효화) 된다.
+ * 오버라이드의 뜻은 재정의가 아니다.
  */
 public class MemEx02 {
 
@@ -63,6 +64,7 @@ public class MemEx02 {
         obj.speak(); // 동적바인딩
     }
 
+    // 불가능
     public static void start(지구인 obj) {
         //System.out.println(obj.skin); // 문제 : 지구인은 skin 변수를 들고 있지 않음.
         obj.walk();
